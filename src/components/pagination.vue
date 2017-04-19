@@ -59,7 +59,7 @@
     data(){
       that = this
       return{
-        num: 40,
+        num: 30,
         limit: 5
       }
     },

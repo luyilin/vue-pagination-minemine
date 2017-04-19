@@ -1,3 +1,5 @@
+## 使用 vue2.0 实现一个简洁的分页组件
+
 #### 前言
 
 > 1. 使用 vue-cli 初始化项目 
@@ -5,7 +7,7 @@
 > 3. node v6.9.2，npm v3.10.9 
 
 * 分页效果预览：
- [demo]()
+ [demo](https://github.com/luyilin/Minemine-pagination)
 ![messagedboard](https://ooo.0o0.ooo/2017/04/19/58f7246807888.png)
 
 #### 分页原理
@@ -195,3 +197,19 @@
       }
     };
   ```
+  
+  #### how to run 
+  
+  ```
+  $ npm install 
+  
+  $ npm run dev
+  
+  // 访问 http://localhost:8088/index.html
+  ```
+  
+  最后打个小广告🎣 ๑乛◡乛๑
+  
+  我的个人网站：https://minemine.cc/
+  
+  github 地址：https://github.com/luyilin

@@ -1,5 +1,4 @@
 <style lang="less">
-  @import url('assets/iconfont/iconfont.css');
   * {
     margin: 0;
     padding: 0;
@@ -14,35 +13,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  /* icon */
-  @font-face {
-    font-family: senty;
-    src: url('http://omlo562s4.bkt.clouddn.com/SentyMarukoElementary.ttf');
-  }
-  @font-face {
-    font-family: Fredericka;
-    src: url('http://omlo562s4.bkt.clouddn.com/FrederickatheGreat-Regular.ttf');
-  }
-  @font-face {
-    font-family: IndieFlower;
-    src: url('http://omlo562s4.bkt.clouddn.com/IndieFlower.ttf');
-  }
-  @font-face {
-    font-family: Inconsolata-Regular;
-    src: url('http://omlo562s4.bkt.clouddn.com/Inconsolata-Regular.ttf');
-  }
-  .iconfont {
-    font-size: 20px;
-    line-height: 2;
-  }
-  .icon {
-    width: 1em; height: 1em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-    font-size: 22px;
-    margin-bottom: -3px;
-  }
   #evanyou {
     position: fixed;
     width: 100%;
@@ -51,44 +21,25 @@
     left: 0;
     z-index: -10;
   }
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s
-  }
-  .fade-enter, .fade-leave-active {
-    opacity: 0
-  }
-  ::selection {
-    background-color: rgba(250,146,137, .8);
-    color: #fff;
-  }
-  .pointer {
-    cursor: pointer;
-  }
-  input, textarea {
-    outline: none;
-  }
-  input {
-    border: none;
-  }
 </style>
 
 <template>
   <div id="app" v-tap="{methods: changeBg}">
     <canvas id="evanyou"></canvas>
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
+    <pagination></pagination>
   </div>
 </template>
 
 <script>
-
+  import pagination from 'components/pagination.vue'
 
 export default {
-  name: 'app',
   data(){
     return {
     }
+  },
+  components: {
+    pagination
   },
   methods: {
     changeBg() {

@@ -24,12 +24,7 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'vue$': 'vue/dist/vue.common.js',
-      'src': path.resolve(__dirname, '../src'),
-      'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components'),
-      'tpl': path.resolve(__dirname, '../src/tpl'),
-      'util': path.resolve(__dirname, '../src/utils'),
-      'filter': path.resolve(__dirname, '../src/filters')
+      'components': path.resolve(__dirname, '../src/components')
     }
   },
   resolveLoader: {

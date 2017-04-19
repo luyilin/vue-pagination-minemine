@@ -1,41 +1,26 @@
 {
-  "name": "Minemine",
+  "name": "Minemine-pagination",
   "version": "0.0.1",
-  "description": "",
+  "description": "a pretty agination component",
   "author": "luyilin",
   "scripts": {
-    "dev": "node app.js & node build/dev-server.js",
-    "app": "node build/dev-server.js",
-    "node": "node app.js",
-    "build1": "node app.js & node build/build.js",
+    "dev": "node build/dev-server.js",
     "build": "node build/build.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luyilin/Minemine.git"
+    "url": "git+https://github.com/luyilin/Minemine-pagination.git"
   },
   "keywords": [
-    "minemine"
+    "minemine",
+    "pagination"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/luyilin/Minemine.git/issues"
+    "url": "https://github.com/luyilin/Minemine-pagination.git/issues"
   },
-  "homepage": "https://github.com/luyilin/Minemine.git#readme",
+  "homepage": "https://github.com/luyilin/Minemine-pagination.git#readme",
   "dependencies": {
-    "axios": "^0.15.3",
-    "koa": "^2.0.0",
-    "koa-bodyparser": "^2.3.0",
-    "koa-cors": "0.0.16",
-    "koa-router": "^7.1.0",
-    "koa-static-server": "^1.0.0",
-    "lowdb": "^0.15.5",
-    "maltoses": "0.0.3",
-    "marked": "^0.3.6",
-    "moment": "^2.17.1",
-    "mongoose": "^4.8.2",
-    "prismjs": "^1.6.0",
-    "uuid": "^3.0.1",
     "vue": "^2.1.0"
   },
   "devDependencies": {
@@ -52,25 +37,19 @@
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.1.0",
     "css-loader": "^0.25.0",
-    "ejs": "^2.5.6",
-    "ejs-loader": "^0.3.0",
     "eventsource-polyfill": "^0.9.6",
-    "express": "^4.14.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "friendly-errors-webpack-plugin": "^1.1.2",
     "function-bind": "^1.0.2",
-    "headroom.js": "^0.9.3",
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.17.2",
     "json-loader": "^0.5.4",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
-    "nprogress": "^0.2.0",
     "opn": "^4.0.2",
     "ora": "^0.3.0",
     "semver": "^5.3.0",
-    "serve-static": "^1.11.2",
     "shelljs": "^0.7.4",
     "underscore": "^1.8.3",
     "url-loader": "^0.5.7",
@@ -84,9 +63,5 @@
     "webpack-dev-middleware": "^1.8.3",
     "webpack-hot-middleware": "^2.12.2",
     "webpack-merge": "^0.14.1"
-  },
-  "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
   }
 }

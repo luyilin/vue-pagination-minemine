@@ -2,7 +2,7 @@
   .page-wrap {
     text-align: center;
     font-size: 18px;
-    margin-top: 12px;
+    margin-top: 180px;
     ul {
       display: inline-block;
       list-style: none;
@@ -59,56 +59,56 @@
     data(){
       that = this
       return{
-        limit: 2
+        num: 40,
+        limit: 5
       }
     },
-    props: ['num'],
     computed: {
       offset() {
-        return this.$store.state.offset
+        return that.$store.state.offset
       },
       prePage() {
-        return this.offset !== 0 || this.num <= this.limit
+        return that.offset !== 0 && that.num
       },
       nextPage() {
-        return this.offset + this.limit < this.num
+        return (that.offset + that.limit < that.num) && that.num
       },
       totalPage() {
-        return Math.ceil(this.num / this.limit)
+        return Math.ceil(that.num / that.limit)
       },
       currentPage() {
-        return Math.ceil(this.offset / this.limit) + 1
+        return Math.ceil(that.offset / that.limit) + 1
       },
       showPageBtn() {
-        let num = this.totalPage,
-            index = this.currentPage,
+        let pageNum = that.totalPage,
+            index = that.currentPage,
             arr = []
-        if (num <= 5) {
-          for(let i = 1; i <= num; i++) {
+        if (pageNum <= 5) {
+          for(let i = 1; i <= pageNum; i++) {
             arr.push(i)
           }
           return arr
         }
-        if (index <= 2) return [1,2,3,0,num]
-        if (index >= num -1) return [1,0, num -2, num -1, num]
-        if (index === 3) return [1,2,3,4,0,num]
-        if (index === num -2) return [1,0, num-3, num-2, num-1, num]
-        return [1,0, index-1, index, index + 1, 0, num]
+        if (index <= 2) return [1,2,3,0,pageNum]
+        if (index >= pageNum -1) return [1,0, pageNum -2, pageNum -1, pageNum]
+        if (index === 3) return [1,2,3,4,0,pageNum]
+        if (index === pageNum -2) return [1,0, pageNum-3, pageNum-2, pageNum-1, pageNum]
+        return [1,0, index-1, index, index + 1, 0, pageNum]
       }
     },
     methods: {
       pageOffset(i) {
         if (i === 0 || i === that.currentPage) return
-        this.$store.commit('GO_PAGE', (i-1) * that.limit)
-        this.$emit('getNew')
+        that.$store.commit('GO_PAGE', (i-1) * that.limit)
+        that.$emit('getNew')
       },
       goPrePage() {
-        this.$store.commit('PRE_PAGE', that.limit)
-        this.$emit('getNew')
+        that.$store.commit('PRE_PAGE', that.limit)
+        that.$emit('getNew')
       },
       goNextPage() {
-        this.$store.commit('NEXT_PAGE', that.limit)
-        this.$emit('getNew')
+        that.$store.commit('NEXT_PAGE', that.limit)
+        that.$emit('getNew')
       }
     }
   }

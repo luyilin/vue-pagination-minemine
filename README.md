@@ -7,8 +7,9 @@
 > 3. node v6.9.2，npm v3.10.9 
 
 * 分页效果预览：
- [demo](https://github.com/luyilin/Minemine-pagination)
-![messagedboard](https://ooo.0o0.ooo/2017/04/19/58f7246807888.png)
+  * [在线 demo](https://luyilin.github.io/Minemine-pagination/dist/index.html)
+  * [github 地址](https://github.com/luyilin/Minemine-pagination)
+  * 分页效果截图![messagedboard](https://ooo.0o0.ooo/2017/04/19/58f7246807888.png)
 
 ### 分页原理
 

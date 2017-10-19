@@ -24,7 +24,7 @@
   
 * 创建 pagination.vue 文件。
   
-  ```
+  ```vue
   <template>
       <div class="page-wrap">
         <ul v-show="prePage" class="li-page" v-tap="{methods: goPrePage}">上一页</ul>
@@ -42,7 +42,7 @@
 
 * 组件的作用域是独立的，父组件通信通过 props 向其传递数据，分页组件通过 $emit 触发在父组件定义的事件实现和父组件的通信，因此预设从父组件获取到需显示的总数 num 为 30 , limit 为 5，当然你也可以随意设置这两个值～
 
-    ```
+    ```js
     let that
     export default{
         data(){
@@ -58,7 +58,7 @@
 * 计算几个变量，在这里可以使用 vue 的计算属性 computed
   * 总页数 totalPage 应该等于需显示的总数除以每页显示的个数，并向上取整，这个很好理解。
 
-  ```
+  ```js
       computed: {
         totalPage() {
           return Math.ceil(that.num / that.limit)
@@ -67,7 +67,7 @@
   ```
   * 偏移量 offset，因为点击上下页、制定页码均会改变 offset 变量，父组件也需要用到这个变量发送 ajax 请求，因此使用 vuex 存储 offset。
   
-  ```
+  ```js
       // pagination.vue
       computed: {
         offset() {
@@ -78,7 +78,7 @@
   
   * 当前页面 currentPage，当前页面是比较重要的一个变量，显示用户当前所处页数，已知偏移量和每页显示数量可以得出当前页面是二者的余数向上取整，因为页数不从0开始，因此
 
-  ```
+  ```js
       computed: {
         currentPage() {
           return Math.ceil(that.offset / that.limit) + 1
@@ -88,7 +88,7 @@
   
   * 是否显示上一页按钮 prePage，因为在首页的时候偏移量为0，因此只要偏移量不等于0则当前页面肯定不在第一页，则显示上一页按钮，并且 num 不等于 0。
   
-  ```
+  ```js
       coumputed: {
         prePage() {
           return that.offset !== 0 && that.num
@@ -98,7 +98,7 @@
 
   * 是否显示下一页按钮 nextPage，这个也很好理解，只要偏移量和每页显示的个数相加小于需显示的总数，则显示下一页按钮，并且 num 不等于 0。
  
-  ```
+  ```js
       computed: {
         nextPage() {
           return (that.offset + that.limit < that.num) && that.num
@@ -108,7 +108,7 @@
 
   * 页码计算 showPageBtn，页码计算是这个分页组件的核心内容，基本思路是当总页数不大于5时，显示全部页码；当总页数大于5时，始终显示首尾页码，当当前页码距首页小于2时，显示前三页页码和省略号；当当前页码距尾页小于2时，显示后三页页码，当当前页码距首页等于2时，显示前四页页码和省略号；当当前页码距尾页等于2时，显示后四页页码和省略号；当当前页码距首页大于3且距尾页大于3时，显示当前页码和当前页码的前一页和后一页，两边各有一个省略号；在这里我们使用0代表省略号
 
-  ```
+  ```js
       computed: {
         showPageBtn() {
             let pageNum = that.totalPage,
@@ -131,7 +131,7 @@
 
 * 跳转事件，分别点击上一页、下一页和指定页码。
 
-```
+```js
     methods: {
       goPage(params) {
         if (params.i === 0 || params.i === that.currentPage) return
@@ -151,7 +151,7 @@
 
 ### vuex 部分
   * 在此介绍一下 vuex 部分的实现，学习了二哲大大的 vuex 部分的结构。在 src 目录下（和 components 目录平级），新建 store 目录，其中 index.js 文件传入 mutation，初始化 vuex；
-  ```
+  ```js
   // vuex store/index.js
     import Vue from 'vue'
     import Vuex from 'vuex'
@@ -170,7 +170,7 @@
   ```
   * mutation-types.js 记录所有的事件名，其实这个文件最大的好处是能让我们更直观地管理所有的 vuex 方法，它的优点会在项目复杂后凸显出来，项目复杂时我们可能会使用 vuex 存储很多数据、定义很多方法，这时 mutation-types.js 就能更好更直观地管理这些方法。这也是一种设计理念嘛，有利于后期维护。
 
-  ```
+  ```js
   // mutation-types.js
       export const PRE_PAGE = 'PRE_PAGE'
       export const NEXT_PAGE = 'NEXT_PAGE'
@@ -179,7 +179,7 @@
 
   * mutation.js 这是 vuex 的核心文件，注册了实现的所有事件，我们定义了点击上一页、下一页和跳转到指定页面的方法。
   
-  ```
+  ```js
   // mutation.js
     import * as types from './mutation-types'
 
@@ -201,7 +201,7 @@
   
   ### how to run 
   
-  ```
+  ```bash
   $ npm install 
   
   $ npm run dev

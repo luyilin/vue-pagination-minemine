@@ -50,7 +50,7 @@
 <div class="page-wrap">
   <ul v-show="prePage" class="li-page" @click="goPrePage">上一页</ul>
   <ul>
-    <li v-for="i in showPageBtn" :key="i" :class="{active: i === currentPage, pointer: i, hover: i && i !== currentPage}"
+    <li v-for="i, index in showPageBtn" :key="index" :class="{active: i === currentPage, pointer: i, hover: i && i !== currentPage}"
         @click="pageOffset(i)">
       <a v-if="i" class="notPointer">{{i}}</a>
       <a v-else>···</a>
@@ -64,7 +64,7 @@
 export default {
   data: () => ({
     num: 30,
-    limit: 5
+    limit: 3
   }),
 
   computed: {

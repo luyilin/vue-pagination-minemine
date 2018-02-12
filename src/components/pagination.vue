@@ -80,20 +80,14 @@
         return Math.ceil(that.offset / that.limit) + 1
       },
       showPageBtn() {
-        let pageNum = that.totalPage,
-            index = that.currentPage,
-            arr = []
-        if (pageNum <= 5) {
-          for(let i = 1; i <= pageNum; i++) {
-            arr.push(i)
-          }
-          return arr
-        }
-        if (index <= 2) return [1,2,3,0,pageNum]
-        if (index >= pageNum -1) return [1,0, pageNum -2, pageNum -1, pageNum]
-        if (index === 3) return [1,2,3,4,0,pageNum]
-        if (index === pageNum -2) return [1,0, pageNum-3, pageNum-2, pageNum-1, pageNum]
-        return [1,0, index-1, index, index + 1, 0, pageNum]
+        const pageNum = that.totalPage,
+            index = that.currentPage
+        if (pageNum <= 5) return [...new Array(5)].map((v, i) => i + 1)
+        if (index <= 2) return [1, 2, 3, 0, pageNum]
+        if (index >= pageNum -1) return [1, 0, pageNum -2, pageNum -1, pageNum]
+        if (index === 3) return [1, 2, 3, 4, 0, pageNum]
+        if (index === pageNum -2) return [1, 0, pageNum-3, pageNum-2, pageNum-1, pageNum]
+        return [1, 0, index - 1, index, index + 1, 0, pageNum]
       }
     },
     methods: {

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App'
+import App from './App.vue'
 import vueTap from 'v-tap'
 import store from './store/index'
 

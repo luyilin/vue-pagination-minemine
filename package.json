@@ -1,31 +1,32 @@
 {
-  "name": "Minemine-pagination",
+  "name": "vue-pagination-minemine",
   "version": "0.0.1",
-  "description": "a pretty agination component",
-  "author": "luyilin",
+  "description": "A pretty pagination component for Vue.js",
+  "author": "luyilin <luyilin12@gmail.com>",
   "scripts": {
     "dev": "node build/dev-server.js",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "lint": "eslint --ext .js,.vue src"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luyilin/Minemine-pagination.git"
+    "url": "git+https://github.com/luyilin/vue-pagination-minemine.git"
   },
   "keywords": [
-    "minemine",
+    "vue",
     "pagination"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/luyilin/Minemine-pagination.git/issues"
+    "url": "https://github.com/luyilin/vue-pagination-minemine.git/issues"
   },
-  "homepage": "https://github.com/luyilin/Minemine-pagination.git#readme",
   "dependencies": {
     "vue": "^2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "babel-core": "6.13.2",
+    "babel-eslint": "^8.2.1",
     "babel-loader": "^6.0.0",
     "babel-plugin-transform-runtime": "^6.0.0",
     "babel-polyfill": "6.13.0",
@@ -37,6 +38,15 @@
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.1.0",
     "css-loader": "^0.25.0",
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-vue": "^4.2.2",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^1.0.1",

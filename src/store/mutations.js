@@ -13,4 +13,4 @@ export default {
   [types.GO_PAGE] (state, offset) {
     state.offset = offset
   }
-};
+}

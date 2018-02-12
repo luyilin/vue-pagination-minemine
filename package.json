@@ -1,12 +1,12 @@
 {
   "name": "vue-pagination-minemine",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A pretty pagination component for Vue.js",
   "author": "luyilin <luyilin12@gmail.com>",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint . --ext .js,.vue src"
   },
   "repository": {
     "type": "git",

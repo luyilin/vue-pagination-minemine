@@ -69,27 +69,27 @@
 
     computed: {
       offset() {
-        return that.$store.state.offset
+        return this.$store.state.offset
       },
 
       prePage() {
-        return that.offset !== 0 && that.num
+        return this.offset !== 0 && this.num
       },
 
       nextPage() {
-        return (that.offset + that.limit < that.num) && that.num
+        return (this.offset + this.limit < this.num) && this.num
       },
 
       totalPage() {
-        return Math.ceil(that.num / that.limit)
+        return Math.ceil(this.num / this.limit)
       },
 
       currentPage() {
-        return Math.ceil(that.offset / that.limit) + 1
+        return Math.ceil(this.offset / this.limit) + 1
       },
 
       showPageBtn() {
-        const pageNum = that.totalPage, index = that.currentPage
+        const pageNum = this.totalPage, index = this.currentPage
         if (pageNum <= 5) return [...new Array(5)].map((v, i) => i + 1)
         if (index <= 2) return [1, 2, 3, 0, pageNum]
         if (index >= pageNum - 1) return [1, 0, pageNum - 2, pageNum - 1, pageNum]
@@ -101,19 +101,19 @@
 
     methods: {
       pageOffset(i) {
-        if (i === 0 || i === that.currentPage) return
-        that.$store.commit('GO_PAGE', (i - 1) * that.limit)
-        that.$emit('getNew')
+        if (i === 0 || i === this.currentPage) return
+        this.$store.commit('GO_PAGE', (i - 1) * this.limit)
+        this.$emit('getNew')
       },
 
       goPrePage() {
-        that.$store.commit('PRE_PAGE', that.limit)
-        that.$emit('getNew')
+        this.$store.commit('PRE_PAGE', this.limit)
+        this.$emit('getNew')
       },
 
       goNextPage() {
-        that.$store.commit('NEXT_PAGE', that.limit)
-        that.$emit('getNew')
+        this.$store.commit('NEXT_PAGE', this.limit)
+        this.$emit('getNew')
       },
     },
   }
